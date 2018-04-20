@@ -1,0 +1,7 @@
+---
+- hosts: all
+  become: yes
+  gather_facts: yes
+#  tasks:
+#    - name: Yum Upgrade All Packages
+#      yum: name=* state=latest
