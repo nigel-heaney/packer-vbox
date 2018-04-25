@@ -2,6 +2,13 @@
 - hosts: all
   become: yes
   gather_facts: yes
-#  tasks:
-#    - name: Yum Upgrade All Packages
-#      yum: name=* state=latest
+  tasks:
+    - name: Yum Upgrade All Packages
+      yum: name=* state=latest
+
+    - name: Setup motd
+      copy:
+        src: files/motd
+        dest: /etc/motd
+        owner: root
+        mode: 0644
